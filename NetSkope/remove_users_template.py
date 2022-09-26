@@ -4,10 +4,10 @@ from pathlib import Path
 # test_data
 # /* cSpell:disable */
 
-test_tenant = "91streets.eu.goskope.com";
-test_netskope_req_id = "69f1spo1w9jl8hdnqil";
-test_token = "M2UxOTViZmVkMzUzMTM0YjNjNGE0ZjU1OGY0NmQzZWU5MXN0cmVldHMuZXUuZ29za29wZS5jb20=";
-test_email = "ash.raj.rawal+test4@gmail.com";
+test_tenant = "[To Be Added]"; # Example abc.eu.netskope.com // Tenant URL of NetSkope
+test_netskope_req_id = "[To Be Added]"; # // Found in Headers when converted to Python: Key: Netskope-req-id
+test_token = "[To Be Added]"; # // Foud in json_data Key: token
+test_email = "[Not Required since File as Input is used]";
 
 # Data Points 
 netskope_tenant = f"{test_tenant}" # Get this from the NetSkope Dashboard URL
