@@ -1,13 +1,20 @@
 import requests, sys
 from pathlib import Path
 
-# test_data
-# /* cSpell:disable */
+"""
+[Key Fields]
 
+Data Fields to be retrived from the Request making deleteUser
+Open DevTools when making the User Delete Request in NetSkope
+search for the URL Endpoint: deleteUserList
+You will see a request grab all the below values from that request
+
+"""
 test_tenant = "[To Be Added]"; # Example abc.eu.netskope.com // Tenant URL of NetSkope
 test_netskope_req_id = "[To Be Added]"; # // Found in Headers when converted to Python: Key: Netskope-req-id
 test_token = "[To Be Added]"; # // Foud in json_data Key: token
 test_email = "[Not Required since File as Input is used]";
+ci_session_cookie = "[To Be Added]"; # // Foud in Cookies: Key `ci_session` -> value
 
 # Data Points 
 netskope_tenant = f"{test_tenant}" # Get this from the NetSkope Dashboard URL
@@ -16,7 +23,7 @@ netskope_deleteuser_endpoint = "/settings/users/deleteUserList"
 
 ## ---- Authorization Data Starts ---- Get this from Identifying the URL making the Delete User(Email) Call
 cookies = {
-    'ci_session': 'bnNtZW1jYWNoZWQHzfHJaAqtcL5H9ojHUcwsFtOT7HXqPIp',
+    'ci_session': f'{ci_session_cookie}',
 }
 
 headers = {
@@ -36,13 +43,13 @@ headers = {
     'X-Requested-With': 'XMLHttpRequest',
 }
 
+## ---- Authorization Data Ends ----
+
+## --- The JSON till the time i used NetSkope was as shows below --- 
 json_data = {
     'emails': f'{test_email}',
     'token': f'{test_token}',
 }
-
-## ---- Authorization Data Ends ----
-
 
 """ Function to Delete Single User/Email From NetSkope """
 def delete_user(user_email):
