@@ -38,12 +38,11 @@ mkdir netskope
 cd netskope
 ```
 
-1. Download the script from here: 
-```
-curl 'https://raw.githubusercontent.com/aashishrbhandari/AutomateIT/master/NetSkope/remove_users_template.py' -O
-```
+1. **Download the script:** 
 
-2. Paste all the Email ID to a file (using name netskope_users.txt
+> **Download** the above script `remove_users_template.py`, you can copy the code content and add it to new file as well, since it is standalone 
+
+2. **Paste all the Email ID to a file (using name netskope_users.txt) **
 ```
 vim netskope_users.txt
 ```
@@ -56,10 +55,10 @@ ESC -> Get out of Insert Mode and move to Command Mode <br>
 :wq -> Write and Quit the file <br>
 
 
-3. Run the script
-(make sure python3 is available and greater than 3.6)
+3. **Run the script**
+
+make sure python3 is available and greater than 3.6
+
 ```
 python3 remove_users_template.py
 ```
-
-
